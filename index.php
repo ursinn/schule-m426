@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="de" dir="ltr">
   <head>
@@ -8,37 +6,32 @@
     <title>Passwort Generieren</title>
   </head>
   <body>
-        <table>
+    <table>
     <?php
 
-    $servername = "localhost";
+    $host = "localhost";
     $username = "root";
     $password = "";
-    $dbname = "db_m26";
+    $database = "db_m26";
 
     // Create connection
-    $conn =  new mysqli($servername, $username, $password, $dbname);
+    $conn = new mysqli($host, $username, $password, $database);
 
     // Check connection
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
-        echo "Fail";
     }
     echo "Connected successfully";
 
-        //mysql_select_db($dbname);
-
-
-        $sql = "SELECT inhalt FROM buza";
-        $result = $conn->query($sql);
-
+    $sql = "SELECT * FROM buza";
+    $result = $conn->query($sql);
 
     echo "<td></td>";
 
     $zahlen = 1;
     $spbu1 = 0;
 
-$abc = 'A';
+    $abc = 'A';
 
     for($x=1; $x<=22; $x++){
 
@@ -60,18 +53,12 @@ $abc = 'A';
       }
       $conn->close();
 
-
-
       echo "</tr>";
 
     }
 
-
-
      ?>
-   </table>
-
-<output name="result"></output>
-
+    </table>
+    <output name="result"></output>
   </body>
 </html>
