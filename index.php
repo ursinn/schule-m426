@@ -17,7 +17,7 @@
     $dbname = "db_m26";
 
     // Create connection
-    $conn =  mysqli_connect($servername, $username, $password, $dbname);
+    $conn =  new mysqli($servername, $username, $password, $dbname);
 
     // Check connection
     if ($conn->connect_error) {
@@ -29,34 +29,18 @@
         //mysql_select_db($dbname);
 
 
-        $abfrage = "SELECT `inhalt` FROM `buza` ORDER BY `Id` DESC";
+        $sql = "SELECT inhalt FROM buza";
+        $result = $conn->query($sql);
 
-        $result = mysqli_query($conn, $abfrage);
-
-
-
-        while($row = mysql_fetch_array($result))
-         echo $row['inhalt']."\n";
 
     echo "<td></td>";
-    $zahlen = 1;
-    $a = 1;
-    $b = 2;
-    $c = 3;
-    $d = 4;
-    $e = 5;
-    $f = 6;
-    $g = 7;
-    $h = 8;
-    $k = 9;
-    $l = 10;
-    $m = 11;
 
+    $zahlen = 1;
     $spbu1 = 0;
 
 $abc = 'A';
 
-    for($x=1; $x<=26; $x++){
+    for($x=1; $x<=22; $x++){
 
       echo "<td>".$abc."</td>";
       $abc++;
@@ -65,36 +49,23 @@ $abc = 'A';
       echo "<tr>";
       echo "<td>".$zahlen."</td>";
       $zahlen++;
-      echo "<td>".$result."</td>";
-      echo "<td>".$spbu1."</td>";
-      echo "<td>".$spbu1."</td>";
-      echo "<td>".$spbu1."</td>";
-      echo "<td>".$spbu1."</td>";
-      echo "<td>".$spbu1."</td>";
-      echo "<td>".$spbu1."</td>";
-      echo "<td>".$spbu1."</td>";
-      echo "<td>".$spbu1."</td>";
-      echo "<td>".$spbu1."</td>";
-      echo "<td>".$spbu1."</td>";
-      echo "<td>".$spbu1."</td>";
-      echo "<td>".$spbu1."</td>";
-      echo "<td>".$spbu1."</td>";
-      echo "<td>".$spbu1."</td>";
-      echo "<td>".$spbu1."</td>";
-      echo "<td>".$spbu1."</td>";
-      echo "<td>".$spbu1."</td>";
-      echo "<td>".$spbu1."</td>";
-      echo "<td>".$spbu1."</td>";
-      echo "<td>".$spbu1."</td>";
-      echo "<td>".$spbu1."</td>";
-      echo "<td>".$spbu1."</td>";
-      echo "<td>".$spbu1."</td>";
-      echo "<td>".$spbu1."</td>";
-      echo "<td>".$spbu1."</td>";
+
+      if ($result->num_rows > 0) {
+          // output data of each row
+          while($row = $result->fetch_assoc()) {
+              echo "<td>". $row["ID"]." ". $row["inhalt"]. "</td>";
+          }
+      } else {
+          echo "0 results";
+      }
+      $conn->close();
+
 
 
       echo "</tr>";
+
     }
+
 
 
      ?>
