@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="main.css">
+    <script src="js/main.js"></script>
     <title>Passwort Generieren</title>
   </head>
   <body>
@@ -41,11 +42,11 @@
       if($abc=="I" || $abc=="L" || $abc=="O" || $abc=="Q" ){
         $abc++;
       }
-      echo "<td>".$abc."</td>";
+      echo "<td class='big'>".$abc."</td>";
       $abc++;
     }
     echo "<tr>";
-    echo "<td>".$zahlen."</td>";
+    echo "<td class='big'>".$zahlen."</td>";
 
     for($y=1; $y<=11; $y++){
 
@@ -53,14 +54,14 @@
       if ($result->num_rows > 0) {
           // output data of each row
           while($row = $result->fetch_assoc()) {
-              echo "<td>". $row["inhalt"]. "</td>";
+              echo "<td class='datenchange'>". $row["inhalt"]. "</td>";
 
 
               $test++;
               if($test==23 || $test==45 || $test==67 || $test==89 || $test==111 || $test==133 || $test==155 || $test==177 || $test==199 || $test==221){
                   $zahlen++;
                   echo "</tr>";
-                  echo "<td>".$zahlen."</td>";
+                  echo "<td class='big'>".$zahlen."</td>";
               }
               }
       } else {
@@ -77,7 +78,11 @@
 
 
      ?>
-    </table>
-    <output name="result"></output>
+
+   </table>
+     <div class="outholder">
+       <output class="output" name="result">Passwort</output>
+     </div>
+
   </body>
 </html>

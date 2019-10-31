@@ -29,3 +29,28 @@ tr{
 table {
   border-collapse: collapse;
 }
+
+td.big{
+  font-weight: 800;
+}
+
+.outholder{
+  padding-top: 20px;
+  width: 300px;
+  display: inline-block;
+}
+
+.output{
+  color: lightgrey;
+  background-color: grey;
+  padding: 10px;
+  margin: 10px;
+  width: 100%;
+  display: inline-block;
+  border: 2px solid black;
+  box-shadow: 0 0 5px #000000;
+}
+
+.datenchange:hover{
+  background-color: blue;
+}
