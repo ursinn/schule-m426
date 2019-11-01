@@ -8,40 +8,20 @@
   </head>
   <body>
     <form class="" action="index.php" method="post">
-      <input type="number" name="bustaben" value="Zahl Eingeben">
-      <input type="number" name="zahlen" value="Zahl Eingeben">
+      <p>Anzahl Bustaben: <input type="number" name="bustaben" value="Zahl Eingeben"></p>
+      <p>Anzahl Zahlen: <input type="number" name="zahlen" value="Zahl Eingeben"></p>
       <input type="submit" />
     </form>
-    <?php echo $_POST['bustaben']; ?>
-<?php echo $_POST['zahlen']; ?>
+
     <table>
     <?php
-
-    $host = "sql7.freemysqlhosting.net";
-    $username = "sql7310321";
-    $password = "Q2XskPLQXJ";
-    $database = "sql7310321";
-
-    // Create connection
-    $conn = new mysqli($host, $username, $password, $database);
-
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-    echo "Connected successfully";
-
-    $sql = "SELECT * FROM buza";
-    $result = $conn->query($sql);
-
-    echo "<td></td>";
-
+    $bu = $_POST['bustaben'];
+    $za = $_POST['zahlen'];
     $zahlen = 1;
     $test = 1;
-
     $abc = 'A';
-
-    for($x=1; $x<=22; $x++){
+    echo "<td></td>";
+    for($x=1; $x<=$bu; $x++){
 // i löschen
 // l löschen
 // O löschen
@@ -52,9 +32,7 @@
       echo "<td class='big'>".$abc."</td>";
       $abc++;
     }
-    echo "<tr>";
-    echo "<td class='big'>".$zahlen."</td>";
-
+    //Generiert Einen String
     function generateRandomString($length = 1) {
       $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
       $charactersLength = strlen($characters);
@@ -64,45 +42,21 @@
       }
       return $randomString;
   }
+    //Berechnung der Anzahl
+    $ausgaberand = $za * $bu;
+    //Ausgabe der Tabele
+    echo "<tr>";
+    echo "<td class='big'>".$zahlen."</td>";
+    for ($i=1; $i<=$ausgaberand; $i++) {
+      echo "<td class='datenchange'>".generateRandomString(). "</td>";
+      if($i==$bu || $i==$bu*$zahlen){
+        $zahlen++;
+        echo "</tr>";
+        echo "<td class='big'>".$zahlen."</td>";
 
-
-    for($y=1; $y<=11; $y++){
-
-    }
-  echo "<td class='datenchange'>".generateRandomString(). "</td>";
-/*
-      if ($result->num_rows > 0) {
-          // output data of each row
-          while($row = $result->fetch_assoc()) {
-              echo "<td class='datenchange'>". $row["inhalt"]. "</td>";
-
-
-              $test++;
-              if($test==23 || $test==45 || $test==67 || $test==89 || $test==111 || $test==133 || $test==155 || $test==177 || $test==199 || $test==221){
-                  $zahlen++;
-                  echo "</tr>";
-                  echo "<td class='big'>".$zahlen."</td>";
-              }
-              }
-      } else {
-          echo "0 results";
-
-
-    }
-
-      }
-
-      $conn->close();
-
-*/
-
-
+  }
+  }
      ?>
-
    </table>
-     <div class="outholder">
-       <output class="output" name="result">Passwort</output>
-     </div>
-
   </body>
 </html>
