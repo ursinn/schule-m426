@@ -10,10 +10,10 @@
     <table>
     <?php
 
-    $host = "localhost";
-    $username = "root";
-    $password = "";
-    $database = "db_m26";
+    $host = "sql7.freemysqlhosting.net";
+    $username = "sql7310321";
+    $password = "Q2XskPLQXJ";
+    $database = "sql7310321";
 
     // Create connection
     $conn = new mysqli($host, $username, $password, $database);
