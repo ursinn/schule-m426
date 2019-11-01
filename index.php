@@ -7,6 +7,13 @@
     <title>Passwort Generieren</title>
   </head>
   <body>
+    <form class="" action="index.php" method="post">
+      <input type="number" name="bustaben" value="Zahl Eingeben">
+      <input type="number" name="zahlen" value="Zahl Eingeben">
+      <input type="submit" />
+    </form>
+    <?php echo $_POST['bustaben']; ?>
+<?php echo $_POST['zahlen']; ?>
     <table>
     <?php
 
@@ -48,9 +55,22 @@
     echo "<tr>";
     echo "<td class='big'>".$zahlen."</td>";
 
+    function generateRandomString($length = 1) {
+      $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+      $charactersLength = strlen($characters);
+      $randomString = '';
+      for ($i = 0; $i < $length; $i++) {
+          $randomString .= $characters[rand(0, $charactersLength - 1)];
+      }
+      return $randomString;
+  }
+
+
     for($y=1; $y<=11; $y++){
 
-
+    }
+  echo "<td class='datenchange'>".generateRandomString(). "</td>";
+/*
       if ($result->num_rows > 0) {
           // output data of each row
           while($row = $result->fetch_assoc()) {
@@ -74,7 +94,7 @@
 
       $conn->close();
 
-
+*/
 
 
      ?>
