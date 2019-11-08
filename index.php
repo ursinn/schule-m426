@@ -7,9 +7,16 @@
     <title>Passwort Generieren</title>
 
     <script>
+    var counter = Boolean(0);
   $(document).ready(function(){
     $('.datenchange').click(function(){
-      $(this).css('background-color', 'red');
+        if(counter == 0) {
+            $(this).css('background-color', 'red');
+            counter = 1;
+        } else if(counter == 1) {
+            $(this).css('background-color', 'white');
+            counter = 0;
+        };
     });
   });
   </script>
