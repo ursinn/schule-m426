@@ -33,7 +33,7 @@
         $za = $_POST['zahlen'];
         $zahlen = 1;
         $abc = 'A';
-        echo "<td></td>";
+        echo "<td class='big'></td>";
         for ($x = 1; $x <= $bu; $x++) {
             echo "<td class='big'>" . $abc . "</td>";
             $abc++;
