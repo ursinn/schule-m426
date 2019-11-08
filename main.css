@@ -11,6 +11,9 @@ h2{
 input{
 
 }
+/*a:visited {
+  background-color: black;
+}*/
 td{
   border: 1px solid black;
   border-collapse: collapse;
@@ -53,4 +56,12 @@ td.big{
 
 .datenchange:hover{
   background-color: blue;
+}
+
+#selectfield {
+  display: none;
+}
+
+#selectfield:checked + label > td {
+  background-color: black;
 }

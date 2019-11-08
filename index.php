@@ -41,26 +41,25 @@
           $randomString .= $characters[rand(0, $charactersLength - 1)];
       }
       return $randomString;
-  }
+    }
     //Berechnung der Anzahl
     $ausgaberand = $za * $bu;
     //Ausgabe der Tabele
     echo "<tr>";
     echo "<td class='big'>".$zahlen."</td>";
     for ($i=1; $i<=$ausgaberand; $i++) {
-      echo "<td class='datenchange'>".generateRandomString(). "</td>";
+      echo "<td class='datenchange'>".generateRandomString(). "</td>;
       if($i==$bu || $i==$bu*$zahlen){
         $zahlen++;
         echo "</tr>";
         echo "<td class='big'>".$zahlen."</td>";
-
-  }
-  }
+      }
+    }
      ?>
      <footer>
        Produkt Owner: Nicola Bühler
-       Mitarbeiter: Joel Brendle
        Mitarbeiter: Ursin Filli
+       Mitarbeiter: Joel Brendle
      </footer>
    </table>
   </body>
