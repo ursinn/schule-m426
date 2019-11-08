@@ -57,6 +57,11 @@
   }
   }
      ?>
+     <footer>
+       Produkt Owner: Nicola Bühler
+       Mitarbeiter: Joel Brendle
+       Mitarbeiter: Ursin Filli 
+     </footer>
    </table>
   </body>
 </html>
