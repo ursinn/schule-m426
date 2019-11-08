@@ -21,9 +21,9 @@
     </nav>
 
 <form class="" action="index.php" method="post">
-    <p>Anzahl Bustaben: <input type="number" name="bustaben" value="Zahl Eingeben"></p>
-    <p>Anzahl Zahlen: <input type="number" name="zahlen" value="Zahl Eingeben"></p>
-    <input type="submit" />
+    <p>Anzahl Bustaben: <input type="number" name="bustaben" value="0"></p>
+    <p>Anzahl Zahlen: <input type="number" name="zahlen" value="0"></p>
+    <input type="submit" value="Tabelle Erstellen"/>
 </form>
 
 <table>
@@ -33,7 +33,7 @@
         $za = $_POST['zahlen'];
         $zahlen = 1;
         $abc = 'A';
-        echo "<td></td>";
+        echo "<td class='big'></td>";
         for ($x = 1; $x <= $bu; $x++) {
             echo "<td class='big'>" . $abc . "</td>";
             $abc++;
@@ -65,6 +65,8 @@
                 }
             }
         }
+    } else {
+      echo "Bitte Geben Sie 2 Zahlen Ein";
     }
     ?>
     <footer>
