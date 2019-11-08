@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="main.css">
     <script src="js/main.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
     <title>Passwort Generieren</title>
   </head>
   <body>
@@ -24,7 +25,7 @@
         $za = $_POST['zahlen'];
         $zahlen = 1;
         $abc = 'A';
-        echo "<td></td>";
+        echo "<td class='big'></td>";
         for ($x = 1; $x <= $bu; $x++) {
             echo "<td class='big'>" . $abc . "</td>";
             $abc++;
@@ -57,6 +58,7 @@
 
   }
   }
+}
      ?>
      <footer>
        <li>Produkt Owner: Nicola Bühler</li>
