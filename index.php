@@ -7,6 +7,10 @@
     <title>Passwort Generieren</title>
   </head>
   <body>
+    <nav>
+      <a href="#Home">Home</a>
+    </nav>
+    
     <form class="" action="index.php" method="post">
       <p>Anzahl Bustaben: <input type="number" name="bustaben" value="Zahl Eingeben"></p>
       <p>Anzahl Zahlen: <input type="number" name="zahlen" value="Zahl Eingeben"></p>
@@ -58,9 +62,9 @@
   }
      ?>
      <footer>
-       Produkt Owner: Nicola Bühler
-       Mitarbeiter: Joel Brendle
-       Mitarbeiter: Ursin Filli
+       <li>Produkt Owner: Nicola Bühler</li>
+       <li>Mitarbeiter: Joel Brendle</li>
+       <li>Mitarbeiter: Ursin Filli</li>
      </footer>
    </table>
   </body>
