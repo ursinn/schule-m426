@@ -7,16 +7,9 @@
     <title>Passwort Generieren</title>
 
     <script>
-    var counter = Boolean(0);
   $(document).ready(function(){
     $('.datenchange').click(function(){
-        if(counter == 0) {
-            $(this).css('background-color', 'red');
-            counter = 1;
-        } else if(counter == 1) {
-            $(this).css('background-color', 'white');
-            counter = 0;
-        };
+        $(this).css('background-color', 'red');
     });
   });
   </script>
@@ -40,7 +33,7 @@
         $za = $_POST['zahlen'];
         $zahlen = 1;
         $abc = 'A';
-        echo "<td class='big'></td>";
+        echo "<td></td>";
         for ($x = 1; $x <= $bu; $x++) {
             echo "<td class='big'>" . $abc . "</td>";
             $abc++;
