@@ -3,10 +3,18 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="main.css">
-    <script src="js/main.js"></script>
-    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/jquery-3.4.1.js"></script>
     <title>Passwort Generieren</title>
+
+    <script>
+  $(document).ready(function(){
+    $('.datenchange').click(function(){
+      $(this).css('background-color', 'red');
+    });
+  });
+  </script>
   </head>
+
   <body>
     <nav>
       <a href="#Home">Home</a>
