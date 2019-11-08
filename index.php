@@ -34,7 +34,7 @@
     }
     //Generiert Einen String
     function generateRandomString($length = 1) {
-      $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+      $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_.*-+:#!?%{}|@[];=“&$\/,()';
       $charactersLength = strlen($characters);
       $randomString = '';
       for ($i = 0; $i < $length; $i++) {
@@ -60,7 +60,7 @@
      <footer>
        Produkt Owner: Nicola Bühler
        Mitarbeiter: Joel Brendle
-       Mitarbeiter: Ursin Filli 
+       Mitarbeiter: Ursin Filli
      </footer>
    </table>
   </body>
