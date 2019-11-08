@@ -4,19 +4,18 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="main.css">
     <script src="js/main.js"></script>
-    <script type="text/javascript" src="js/jquery.js"></script>
     <title>Passwort Generieren</title>
-  </head>
-  <body>
-    <nav>
-      <a href="#Home">Home</a>
-    </nav>
+</head>
+<body>
+<nav>
+    <a href="#Home">Home</a>
+</nav>
 
-    <form class="" action="index.php" method="post">
-      <p>Anzahl Bustaben: <input type="number" name="bustaben" value="Zahl Eingeben"></p>
-      <p>Anzahl Zahlen: <input type="number" name="zahlen" value="Zahl Eingeben"></p>
-      <input type="submit" />
-    </form>
+<form class="" action="index.php" method="post">
+    <p>Anzahl Bustaben: <input type="number" name="bustaben" value="Zahl Eingeben"></p>
+    <p>Anzahl Zahlen: <input type="number" name="zahlen" value="Zahl Eingeben"></p>
+    <input type="submit" />
+</form>
 
 <table>
     <?php
@@ -25,7 +24,7 @@
         $za = $_POST['zahlen'];
         $zahlen = 1;
         $abc = 'A';
-        echo "<td class='big'></td>";
+        echo "<td></td>";
         for ($x = 1; $x <= $bu; $x++) {
             echo "<td class='big'>" . $abc . "</td>";
             $abc++;
@@ -50,21 +49,20 @@
         for ($i = 1; $i <= $ausgaberand; $i++) {
             echo "<td class='datenchange'>" . generateRandomString() . "</td>";
             if ($i == $bu || $i == $bu * $zahlen) {
-				if ($za != $zahlen) {
-					$zahlen++;
-					echo "</tr>";
-					echo "<td class='big'>" . $zahlen . "</td>";
-				}
-
-  }
-  }
-}
-     ?>
-     <footer>
-       <li>Produkt Owner: Nicola Bühler</li>
-       <li>Mitarbeiter: Joel Brendle</li>
-       <li>Mitarbeiter: Ursin Filli</li>
-     </footer>
-   </table>
-  </body>
+                if ($za != $zahlen) {
+                    $zahlen++;
+                    echo "</tr>";
+                    echo "<td class='big'>" . $zahlen . "</td>";
+                }
+            }
+        }
+    }
+    ?>
+    <footer>
+        <li>Produkt Owner: Nicola Bühler</li>
+        <li>Mitarbeiter: Joel Brendle</li>
+        <li>Mitarbeiter: Ursin Filli</li>
+    </footer>
+</table>
+</body>
 </html>
