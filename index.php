@@ -9,7 +9,10 @@
     <script>
   $(document).ready(function(){
     $('.datenchange').click(function(){
-        $(this).css('background-color', 'red');
+		if($(this).css('background-color') == 'rgb(255, 0, 0)')
+			$(this).css('background-color', 'white');
+		else
+			$(this).css('background-color', 'red');
     });
   });
   </script>
@@ -33,7 +36,7 @@
         $za = $_POST['zahlen'];
         $zahlen = 1;
         $abc = 'A';
-        echo "<td></td>";
+        echo "<td class='big'></td>";
         for ($x = 1; $x <= $bu; $x++) {
             echo "<td class='big'>" . $abc . "</td>";
             $abc++;
