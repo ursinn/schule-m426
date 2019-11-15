@@ -14,6 +14,7 @@ td{
   text-align: center;
   padding: 8px;
 }
+
 tr{
   text-align: center;
   border-collapse: collapse;
@@ -35,12 +36,14 @@ td.big{
   color: white;
 }
 
+/* Not Used */
 .outholder{
   padding-top: 20px;
   width: 300px;
   display: inline-block;
 }
 
+/* Not Used */
 .output{
   color: lightgrey;
   background-color: grey;
@@ -55,7 +58,6 @@ td.big{
 .datenchange:hover{
   background-color: #00beff91;
 }
-
 
 footer{
   position: fixed;
