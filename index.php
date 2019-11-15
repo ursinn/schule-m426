@@ -15,8 +15,75 @@
 			$(this).css('background-color', 'red');
     });
   });
+  </script>
+  </head>
 
-  // geting canvas by Boujjou Achraf
+  <body>
+      <!-- Navigation / Titel -->
+    <nav>
+      <a href="#Home">PASSWORTKARTE</a>
+    </nav>
+	<canvas id="c"></canvas>
+	<div id="content">
+	<form class="" action="index.php" method="post">
+		<p>Anzahl Bustaben: <input type="number" name="bustaben" value="<?php if(isset($_POST['bustaben'])){echo $_POST['bustaben'];}else{echo '0';}?>"></p>
+		<p>Anzahl Zahlen: <input type="number" name="zahlen" value="<?php if(isset($_POST['zahlen'])){echo $_POST['zahlen'];}else{echo '0';}?>"></p>
+		<input type="submit" value="Tabelle Erstellen"/>
+	</form>
+
+	<table>
+    <?php
+    if (isset($_POST['bustaben']) && isset($_POST['zahlen']) && !empty($_POST['bustaben']) && !empty($_POST['zahlen']) && $_POST['zahlen'] > 0 && $_POST['bustaben'] > 0) {
+        $bu = $_POST['bustaben'];
+        $za = $_POST['zahlen'];
+        $zahlen = 1;
+        $abc = 'A';
+        echo "<td class='big'></td>";
+        for ($x = 1; $x <= $bu; $x++) {
+            echo "<td class='big'>" . $abc . "</td>";
+            $abc++;
+        }
+        //Generiert Einen String
+        function generateRandomString($length = 1)
+        {
+            $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ~!@#$%^&*()-_=+[]{};:,.<>/?';
+            $charactersLength = strlen($characters);
+            $randomString = '';
+            for ($i = 0; $i < $length; $i++) {
+                $randomString .= $characters[rand(0, $charactersLength - 1)];
+            }
+            return $randomString;
+        }
+
+        //Berechnung der Anzahl
+        $ausgaberand = $za * $bu;
+        //Ausgabe der Tabele
+        echo "<tr>";
+        echo "<td class='big'>" . $zahlen . "</td>";
+        for ($i = 1; $i <= $ausgaberand; $i++) {
+            echo "<td class='datenchange'>" . generateRandomString() . "</td>";
+            if ($i == $bu || $i == $bu * $zahlen) {
+                if ($za != $zahlen) {
+                    $zahlen++;
+                    echo "</tr>";
+                    echo "<td class='big'>" . $zahlen . "</td>";
+                }
+            }
+        }
+    } else {
+      echo "Bitte Geben Sie 2 Zahlen Ein";
+    }
+    ?>
+    </div>
+    <footer>
+        <li>Produkt Owner: Nicola Bühler</li>
+        <li>Mitarbeiter: Joel Brendle</li>
+        <li>Mitarbeiter: Ursin Filli</li>
+    </footer>
+</table>
+
+<script>
+// geting canvas by Boujjou Achraf
           var c = document.getElementById("c");
           var ctx = c.getContext("2d");
 
@@ -68,71 +135,6 @@
 
           setInterval(draw, 35);
 
-  </script>
-  </head>
-
-  <body>
-      <!-- Navigation / Titel -->
-    <nav>
-      <a href="#Home">PASSWORTKARTE</a>
-    </nav>
-<canvas id="c"></canvas>
-<div id="content">
-<form class="" action="index.php" method="post">
-    <p>Anzahl Bustaben: <input type="number" name="bustaben" value="<?php if(isset($_POST['bustaben'])){echo $_POST['bustaben'];}else{echo '0';}?>"></p>
-    <p>Anzahl Zahlen: <input type="number" name="zahlen" value="<?php if(isset($_POST['zahlen'])){echo $_POST['zahlen'];}else{echo '0';}?>"></p>
-    <input type="submit" value="Tabelle Erstellen"/>
-</form>
-
-<table>
-    <?php
-    if (isset($_POST['bustaben']) && isset($_POST['zahlen']) && !empty($_POST['bustaben']) && !empty($_POST['zahlen']) && $_POST['zahlen'] > 0 && $_POST['bustaben'] > 0) {
-        $bu = $_POST['bustaben'];
-        $za = $_POST['zahlen'];
-        $zahlen = 1;
-        $abc = 'A';
-        echo "<td class='big'></td>";
-        for ($x = 1; $x <= $bu; $x++) {
-            echo "<td class='big'>" . $abc . "</td>";
-            $abc++;
-        }
-        //Generiert Einen String
-        function generateRandomString($length = 1)
-        {
-            $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ~!@#$%^&*()-_=+[]{};:,.<>/?';
-            $charactersLength = strlen($characters);
-            $randomString = '';
-            for ($i = 0; $i < $length; $i++) {
-                $randomString .= $characters[rand(0, $charactersLength - 1)];
-            }
-            return $randomString;
-        }
-
-        //Berechnung der Anzahl
-        $ausgaberand = $za * $bu;
-        //Ausgabe der Tabele
-        echo "<tr>";
-        echo "<td class='big'>" . $zahlen . "</td>";
-        for ($i = 1; $i <= $ausgaberand; $i++) {
-            echo "<td class='datenchange'>" . generateRandomString() . "</td>";
-            if ($i == $bu || $i == $bu * $zahlen) {
-                if ($za != $zahlen) {
-                    $zahlen++;
-                    echo "</tr>";
-                    echo "<td class='big'>" . $zahlen . "</td>";
-                }
-            }
-        }
-    } else {
-      echo "Bitte Geben Sie 2 Zahlen Ein";
-    }
-    ?>
-    </div>
-    <footer>
-        <li>Produkt Owner: Nicola Bühler</li>
-        <li>Mitarbeiter: Joel Brendle</li>
-        <li>Mitarbeiter: Ursin Filli</li>
-    </footer>
-</table>
+</script>
 </body>
 </html>
