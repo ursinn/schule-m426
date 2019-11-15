@@ -1,16 +1,12 @@
+body {
+  font-family: 'Arial';
+}
+
 body{
   padding: 0;
   margin: 0;
 }
-h1{
 
-}
-h2{
-
-}
-input{
-
-}
 td{
   border: 1px solid black;
   border-collapse: collapse;
@@ -77,6 +73,7 @@ li{
   list-style: none;
 }
 
+/* Titel */
 nav{
   color: white;
   text-align: center;
@@ -85,6 +82,7 @@ nav{
   top: 0;
   height: 50px;
   background-color: blue;
+  padding-top: 10px;
 }
 
 a{
