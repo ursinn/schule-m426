@@ -19,10 +19,11 @@
   </head>
 
   <body>
+      <!-- Navigation / Titel -->
     <nav>
       <a href="#Home">PASSWORTKARTE</a>
     </nav>
-
+<div id="content">
 <form class="" action="index.php" method="post">
     <p>Anzahl Bustaben: <input type="number" name="bustaben" value="<?php if(isset($_POST['bustaben'])){echo $_POST['bustaben'];}else{echo '0';}?>"></p>
     <p>Anzahl Zahlen: <input type="number" name="zahlen" value="<?php if(isset($_POST['zahlen'])){echo $_POST['zahlen'];}else{echo '0';}?>"></p>
@@ -72,6 +73,7 @@
       echo "Bitte Geben Sie 2 Zahlen Ein";
     }
     ?>
+    </div>
     <footer>
         <li>Produkt Owner: Nicola Bühler</li>
         <li>Mitarbeiter: Joel Brendle</li>
