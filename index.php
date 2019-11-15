@@ -31,7 +31,7 @@
 
 <table>
     <?php
-    if (isset($_POST['bustaben']) && isset($_POST['zahlen']) && !empty($_POST['bustaben']) && !empty($_POST['zahlen'])) {
+    if (isset($_POST['bustaben']) && isset($_POST['zahlen']) && !empty($_POST['bustaben']) && !empty($_POST['zahlen']) && $_POST['zahlen'] > 0 && $_POST['bustaben'] > 0) {
         $bu = $_POST['bustaben'];
         $za = $_POST['zahlen'];
         $zahlen = 1;
