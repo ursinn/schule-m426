@@ -24,14 +24,14 @@
     </nav>
 
 <form class="" action="index.php" method="post">
-    <p>Anzahl Bustaben: <input type="number" name="bustaben" value="0"></p>
-    <p>Anzahl Zahlen: <input type="number" name="zahlen" value="0"></p>
+    <p>Anzahl Bustaben: <input type="number" name="bustaben" value="<?php if(isset($_POST['bustaben'])){echo $_POST['bustaben'];}else{echo '0';}?>"></p>
+    <p>Anzahl Zahlen: <input type="number" name="zahlen" value="<?php if(isset($_POST['zahlen'])){echo $_POST['zahlen'];}else{echo '0';}?>"></p>
     <input type="submit" value="Tabelle Erstellen"/>
 </form>
 
 <table>
     <?php
-    if (isset($_POST['bustaben']) && isset($_POST['zahlen'])) {
+    if (isset($_POST['bustaben']) && isset($_POST['zahlen']) && !empty($_POST['bustaben']) && !empty($_POST['zahlen'])) {
         $bu = $_POST['bustaben'];
         $za = $_POST['zahlen'];
         $zahlen = 1;
