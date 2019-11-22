@@ -97,8 +97,17 @@ a:hover {
   color: white;
 }
 
+#tabelle {
+  position: fixed;
+  top: 17%;
+  left: 30%;
+}
+
 #formular {
+  position: fixed;
   background-color: white;
   width: 200px;
-  
+  padding: 20px 0 40px 40px;
+  top: 20%;
+  left: 7%;
 }

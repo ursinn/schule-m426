@@ -23,8 +23,8 @@
     <nav>
       <a href="#Home">PASSWORTKARTE</a>
     </nav>
+    <!-- Hintergrund - Matrix -->
 	<canvas id="c"></canvas>
-	<div id="content">
     <div id="formular">
 	<form class="" action="index.php" method="post">
 		<p>Anzahl Bustaben: <input type="number" name="bustaben" value="<?php if(isset($_POST['bustaben'])){echo $_POST['bustaben'];}else{echo '0';}?>"></p>
@@ -32,7 +32,7 @@
 		<input type="submit" value="Tabelle Erstellen"/>
     </form>
     </div>
-
+    <div id="tabelle">
 	<table>
     <?php
     if (isset($_POST['bustaben']) && isset($_POST['zahlen']) && !empty($_POST['bustaben']) && !empty($_POST['zahlen']) && $_POST['zahlen'] > 0 && $_POST['bustaben'] > 0) {
