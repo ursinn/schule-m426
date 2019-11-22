@@ -101,6 +101,9 @@ a:hover {
   position: fixed;
   top: 17%;
   left: 30%;
+  overflow: scroll;
+  width: 900px;
+  height: 430px;
 }
 
 #formular {
