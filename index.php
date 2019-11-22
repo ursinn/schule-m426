@@ -32,7 +32,17 @@
 		<input type="submit" value="Tabelle Erstellen"/>
     </form>
     </div>
-    <div id="tabelle">
+    <?php
+    echo "<div id='tabelle' ";
+    if (isset($_POST['bustaben']) && isset($_POST['zahlen']) && !empty($_POST['bustaben']) && !empty($_POST['zahlen']) && $_POST['zahlen'] > 0 && $_POST['bustaben'] > 0) {
+        $bu = $_POST['bustaben'];
+        $za = $_POST['zahlen'];
+        if ($za>26 || $bu>11) {
+            echo " style='overflow: scroll'";
+        }
+    }
+    echo ">";
+    ?>
 	<table>
     <?php
     if (isset($_POST['bustaben']) && isset($_POST['zahlen']) && !empty($_POST['bustaben']) && !empty($_POST['zahlen']) && $_POST['zahlen'] > 0 && $_POST['bustaben'] > 0) {
@@ -73,7 +83,7 @@
             }
         }
     } else {
-      echo "Bitte Geben Sie 2 Zahlen Ein";
+      echo "<h2 style='color:white'>Bitte Geben Sie 2 Zahlen Ein</h2>";
     }
     ?>
     </div>
