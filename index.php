@@ -25,11 +25,13 @@
     </nav>
 	<canvas id="c"></canvas>
 	<div id="content">
+    <div id="formular">
 	<form class="" action="index.php" method="post">
 		<p>Anzahl Bustaben: <input type="number" name="bustaben" value="<?php if(isset($_POST['bustaben'])){echo $_POST['bustaben'];}else{echo '0';}?>"></p>
 		<p>Anzahl Zahlen: <input type="number" name="zahlen" value="<?php if(isset($_POST['zahlen'])){echo $_POST['zahlen'];}else{echo '0';}?>"></p>
 		<input type="submit" value="Tabelle Erstellen"/>
-	</form>
+    </form>
+    </div>
 
 	<table>
     <?php
