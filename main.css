@@ -95,9 +95,11 @@ a:hover {
 #tabelle {
   position: fixed;
   top: 17%;
-  left: 30%;
-  width: 900px;
-  height: 430px;
+  left: 400px;
+  /*with: 900px;*/
+  /*height: 430px;*/
+  right: 50px;
+  bottom: 150px;
 }
 
 #formular {
@@ -106,5 +108,17 @@ a:hover {
   width: 200px;
   padding: 20px 0 40px 40px;
   top: 20%;
-  left: 7%;
+  left: 100px;
+}
+
+@media screen and (max-width: 700px) {
+  #formular {
+    left: 50px;
+    top: 90px;
+  }
+
+  #tabelle {
+    left: 31px;
+    top: 300px;
+  }
 }
