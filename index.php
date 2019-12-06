@@ -27,10 +27,30 @@
 	<canvas id="c"></canvas>
     <div id="formular">
 	<form class="" action="index.php" method="post">
-		<p>Anzahl Bustaben: <input type="number" name="bustaben" value="<?php if(isset($_POST['bustaben'])){echo $_POST['bustaben'];}else{echo '0';}?>"></p>
-		<p>Anzahl Zahlen: <input type="number" name="zahlen" value="<?php if(isset($_POST['zahlen'])){echo $_POST['zahlen'];}else{echo '0';}?>"></p>
+		<p>Breite:<br><input type="number" name="bustaben" value="<?php if(isset($_POST['bustaben'])){echo $_POST['bustaben'];}else{echo '0';}?>"></p>
+		<p>Höhe:<br><input type="number" name="zahlen" value="<?php if(isset($_POST['zahlen'])){echo $_POST['zahlen'];}else{echo '0';}?>"></p>
 		<input type="submit" value="Tabelle Erstellen"/>
     </form>
+    <script>
+        function PrintElem(elem)
+        {
+            var mywindow = window.open('', 'PRINT', 'height=400,width=600');
+
+            mywindow.document.write('<html><head><title>' + document.title  + '</title>');
+            mywindow.document.write('</head><body >');
+            mywindow.document.write('<h1>' + document.title  + '</h1>');
+            mywindow.document.write(document.getElementById(elem).innerHTML);
+            mywindow.document.write('</body></html>');
+
+            mywindow.document.close(); // necessary for IE >= 10
+            mywindow.focus(); // necessary for IE >= 10*/
+
+            mywindow.print();
+            mywindow.close();
+
+            return true;
+        }
+    </script> 
     </div>
     <?php
     echo "<div id='tabelle' ";
@@ -83,7 +103,7 @@
             }
         }
     } else {
-      echo "<h2 style='color:white'>Bitte Geben Sie 2 Zahlen Ein</h2>";
+      echo "<h2 style='color:white'>Bitte Geben Sie Höhe und Breite ein</h2>";
     }
     ?>
     </div>
