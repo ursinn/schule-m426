@@ -26,38 +26,29 @@
     <!-- Hintergrund - Matrix -->
 	<canvas id="c"></canvas>
     <div id="formular">
+    <?php
+        $beenden = 0;
+    ?>
 	<form class="" action="index.php" method="post">
 		<p>Breite:<br><input type="number" name="bustaben" value="<?php if(isset($_POST['bustaben'])){echo $_POST['bustaben'];}else{echo '0';}?>"></p>
 		<p>Höhe:<br><input type="number" name="zahlen" value="<?php if(isset($_POST['zahlen'])){echo $_POST['zahlen'];}else{echo '0';}?>"></p>
-		<input type="submit" value="Tabelle Erstellen"/>
+        <input type="submit" value="Tabelle Erstellen"/>
+        <br>
+        <br>
+        <button onclick="drucken()">Drucken</button>
+        <script type="text/javascript">
+            function drucken() {
+                window.print();
+            }
+        </script>
     </form>
-    <script>
-        function PrintElem(elem)
-        {
-            var mywindow = window.open('', 'PRINT', 'height=400,width=600');
-
-            mywindow.document.write('<html><head><title>' + document.title  + '</title>');
-            mywindow.document.write('</head><body >');
-            mywindow.document.write('<h1>' + document.title  + '</h1>');
-            mywindow.document.write(document.getElementById(elem).innerHTML);
-            mywindow.document.write('</body></html>');
-
-            mywindow.document.close(); // necessary for IE >= 10
-            mywindow.focus(); // necessary for IE >= 10*/
-
-            mywindow.print();
-            mywindow.close();
-
-            return true;
-        }
-    </script> 
     </div>
     <?php
     echo "<div id='tabelle' ";
     if (isset($_POST['bustaben']) && isset($_POST['zahlen']) && !empty($_POST['bustaben']) && !empty($_POST['zahlen']) && $_POST['zahlen'] > 0 && $_POST['bustaben'] > 0) {
         $bu = $_POST['bustaben'];
         $za = $_POST['zahlen'];
-        if ($za>26 || $bu>11) {
+        if ($za>11 || $bu>11) {
             echo " style='overflow: scroll'";
         }
     }

@@ -111,7 +111,18 @@ a:hover {
   left: 100px;
 }
 
-@media screen and (max-width: 700px) {
+#print {
+  position: fixed;
+  background-color: white;
+}
+
+#print img {
+  margin: 20px;
+  height: 100px;
+  width: 100px;
+}
+
+@media screen and (max-width: 763px) {
   #formular {
     left: 50px;
     top: 90px;
@@ -120,5 +131,19 @@ a:hover {
   #tabelle {
     left: 31px;
     top: 300px;
+  }
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #tabelle * {
+    visibility: visible;
+  }
+  #tabelle {
+    position: absolute;
+    left: 0;
+    top: 0;
   }
 }
