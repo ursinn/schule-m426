@@ -2,7 +2,7 @@
 <html lang="de" dir="ltr">
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" type="text/css" href="main.css">
     <script type="text/javascript" src="js/jquery-3.4.1.js"></script>
     <title>Passwort Generieren</title>
 
@@ -56,19 +56,23 @@
     ?>
 	<table>
     <?php
+    // kontrollieren ob überhaupt etwas eingegeben wurde
     if (isset($_POST['bustaben']) && isset($_POST['zahlen']) && !empty($_POST['bustaben']) && !empty($_POST['zahlen']) && $_POST['zahlen'] > 0 && $_POST['bustaben'] > 0) {
+        // Eingaben in Variablen speichern
         $bu = $_POST['bustaben'];
         $za = $_POST['zahlen'];
         $zahlen = 1;
         $abc = 'A';
         echo "<td class='big'></td>";
         for ($x = 1; $x <= $bu; $x++) {
+            // Alphabet ausgeben
             echo "<td class='big'>" . $abc . "</td>";
             $abc++;
         }
         //Generiert Einen String
         function generateRandomString($length = 1)
         {
+            // Zeichen in String speichern
             $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ~!@#$%^&*()-_=+[]{};:,.<>/?';
             $charactersLength = strlen($characters);
             $randomString = '';
@@ -80,11 +84,13 @@
 
         //Berechnung der Anzahl
         $ausgaberand = $za * $bu;
-        //Ausgabe der Tabele
+        //Ausgabe der Tabelle
         echo "<tr>";
         echo "<td class='big'>" . $zahlen . "</td>";
         for ($i = 1; $i <= $ausgaberand; $i++) {
+            // Zufälligen String ausgeben
             echo "<td class='datenchange'>" . generateRandomString() . "</td>";
+            // Zahlen ausgeben
             if ($i == $bu || $i == $bu * $zahlen) {
                 if ($za != $zahlen) {
                     $zahlen++;
@@ -94,6 +100,7 @@
             }
         }
     } else {
+      // Fals nichts eingegeben wurde: Meldung ausgeben
       echo "<h2 style='color:white'>Bitte Geben Sie Höhe und Breite ein</h2>";
     }
     ?>
