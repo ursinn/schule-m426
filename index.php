@@ -7,14 +7,14 @@
     <title>Passwort Generieren</title>
 
     <script>
-  $(document).ready(function(){
-    $('.datenchange').click(function(){
-		if($(this).css('background-color') == 'rgb(255, 0, 0)')
-			$(this).css('background-color', 'white');
-		else
-			$(this).css('background-color', 'red');
-    });
-  });
+        $(document).ready(function(){
+            $('.datenchange').click(function(){
+                if($(this).css('background-color') == 'rgb(255, 0, 0)')
+                    $(this).css('background-color', 'white');
+                else
+                    $(this).css('background-color', 'red');
+            });
+        });
   </script>
   </head>
 
