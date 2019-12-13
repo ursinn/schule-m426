@@ -37,6 +37,7 @@
         <br>
         <button onclick="drucken()">Drucken</button>
         <script type="text/javascript">
+            // tabelle ausdrucken button
             function drucken() {
                 window.print();
             }
@@ -45,9 +46,12 @@
     </div>
     <?php
     echo "<div id='tabelle' ";
+    // kontrollieren ob überhaupt etwas eingegeben wurde
     if (isset($_POST['bustaben']) && isset($_POST['zahlen']) && !empty($_POST['bustaben']) && !empty($_POST['zahlen']) && $_POST['zahlen'] > 0 && $_POST['bustaben'] > 0) {
+        // Eingaben in Variablen speichern
         $bu = $_POST['bustaben'];
         $za = $_POST['zahlen'];
+        // wenn buchstaben oder zahlen mehr als 11 sind ist die tabelle scroll-bar
         if ($za>11 || $bu>11) {
             echo " style='overflow: scroll'";
         }
@@ -63,6 +67,7 @@
         $za = $_POST['zahlen'];
         $zahlen = 1;
         $abc = 'A';
+        // beginn der zellen der tabelle
         echo "<td class='big'></td>";
         for ($x = 1; $x <= $bu; $x++) {
             // Alphabet ausgeben
